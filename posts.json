@@ -1,0 +1,23 @@
+[
+  {
+    "title": "FX Volatility Dashboard",
+    "date": "2025-02-10",
+    "tags": ["Python", "Dash", "FX"],
+    "excerpt": "Interactive dashboard showing realized vs implied volatility across G10 FX. Built with Plotly Dash and deployed on GCP.",
+    "url": "#"
+  },
+  {
+    "title": "NLP on Earnings Calls",
+    "date": "2024-11-01",
+    "tags": ["NLP", "Python", "Sentiment"],
+    "excerpt": "Exploratory analysis applying transformer models to extract sentiment and themes from quarterly earnings transcripts.",
+    "url": "#"
+  },
+  {
+    "title": "Portfolio Backtester (mini)",
+    "date": "2024-08-18",
+    "tags": ["Pandas", "Backtest", "ML"],
+    "excerpt": "A lightweight backtester for rule-based strategies with walk-forward evaluation and simple transaction cost model.",
+    "url": "#"
+  }
+]
