@@ -66,10 +66,7 @@
       min-height: 100vh;
     }
 
-    .wrap {
-      max-width: 920px;
-      margin: 0 auto;
-    }
+    .wrap { max-width: 920px; margin: 0 auto; }
 
     /* ── Header ── */
     .page-header {
@@ -78,52 +75,24 @@
       border-bottom: 1px solid var(--border);
     }
     .eyebrow {
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--text-3);
-      margin-bottom: 0.5rem;
+      font-size: 11px; font-weight: 500; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--text-3); margin-bottom: 0.5rem;
     }
     .page-header h1 {
-      font-family: 'Lora', Georgia, serif;
-      font-size: 2rem;
-      font-weight: 600;
-      letter-spacing: -0.3px;
-      line-height: 1.2;
-      color: var(--text);
-      margin-bottom: 0.4rem;
+      font-family: 'Lora', Georgia, serif; font-size: 2rem; font-weight: 600;
+      letter-spacing: -0.3px; line-height: 1.2; color: var(--text); margin-bottom: 0.4rem;
     }
-    .subhead {
-      font-size: 13px;
-      color: var(--text-2);
-    }
+    .subhead { font-size: 13px; color: var(--text-2); }
 
     /* ── Tabs ── */
-    .tab-nav {
-      display: flex;
-      gap: 6px;
-      flex-wrap: wrap;
-      margin-bottom: 2rem;
-    }
+    .tab-nav { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 2rem; }
     .tab-btn {
-      font-family: 'Sora', sans-serif;
-      font-size: 13px;
-      font-weight: 500;
-      padding: 7px 16px;
-      border-radius: 99px;
-      border: 1px solid var(--border-2);
-      background: transparent;
-      color: var(--text-2);
-      cursor: pointer;
-      transition: all 0.15s;
+      font-family: 'Sora', sans-serif; font-size: 13px; font-weight: 500;
+      padding: 7px 16px; border-radius: 99px; border: 1px solid var(--border-2);
+      background: transparent; color: var(--text-2); cursor: pointer; transition: all 0.15s;
     }
     .tab-btn:hover { background: var(--surface); color: var(--text); }
-    .tab-btn.active {
-      background: var(--text);
-      color: var(--bg);
-      border-color: var(--text);
-    }
+    .tab-btn.active { background: var(--text); color: var(--bg); border-color: var(--text); }
     .tab-panel { display: none; }
     .tab-panel.active { display: block; animation: fadeUp 0.2s ease; }
     @keyframes fadeUp {
@@ -135,199 +104,197 @@
     .metric-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 12px;
-      margin-bottom: 1.75rem;
+      gap: 12px; margin-bottom: 1.75rem;
     }
     .metric-card {
-      background: var(--surface);
-      border-radius: var(--radius);
-      padding: 14px 16px;
-      border: 1px solid var(--border);
+      background: var(--surface); border-radius: var(--radius);
+      padding: 14px 16px; border: 1px solid var(--border);
     }
     .metric-label {
-      font-size: 11px;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--text-3);
-      margin-bottom: 5px;
+      font-size: 11px; font-weight: 500; text-transform: uppercase;
+      letter-spacing: 0.06em; color: var(--text-3); margin-bottom: 5px;
     }
     .metric-val {
-      font-family: 'Lora', Georgia, serif;
-      font-size: 1.75rem;
-      font-weight: 600;
-      line-height: 1.1;
-      color: var(--text);
+      font-family: 'Lora', Georgia, serif; font-size: 1.75rem;
+      font-weight: 600; line-height: 1.1; color: var(--text);
     }
-    .metric-sub {
-      font-size: 11px;
-      color: var(--text-2);
-      margin-top: 4px;
-    }
-    .metric-card.accent-blue { border-left: 3px solid var(--blue); }
-    .metric-card.accent-red  { border-left: 3px solid var(--red); }
-    .metric-card.accent-green{ border-left: 3px solid var(--green); }
-    .metric-card.accent-amber{ border-left: 3px solid var(--amber); }
+    .metric-sub { font-size: 11px; color: var(--text-2); margin-top: 4px; }
+    .metric-card.accent-blue  { border-left: 3px solid var(--blue); }
+    .metric-card.accent-red   { border-left: 3px solid var(--red); }
+    .metric-card.accent-green { border-left: 3px solid var(--green); }
+    .metric-card.accent-amber { border-left: 3px solid var(--amber); }
 
     /* ── Legend ── */
     .legend-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-bottom: 12px;
-      font-size: 12px;
-      color: var(--text-2);
-      align-items: center;
+      display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 12px;
+      font-size: 12px; color: var(--text-2); align-items: center;
     }
     .legend-sq {
-      display: inline-block;
-      width: 10px; height: 10px;
-      border-radius: 2px;
-      margin-right: 5px;
-      vertical-align: middle;
+      display: inline-block; width: 10px; height: 10px;
+      border-radius: 2px; margin-right: 5px; vertical-align: middle;
     }
 
     /* ── Chart ── */
-    .chart-wrap {
-      position: relative;
-      width: 100%;
-    }
+    .chart-wrap { position: relative; width: 100%; }
     .chart-wrap canvas { display: block; width: 100% !important; }
 
     /* ── Source note ── */
     .source-note {
-      font-size: 11px;
-      color: var(--text-3);
-      border-top: 1px solid var(--border);
-      padding-top: 12px;
-      margin-top: 14px;
-      line-height: 1.6;
+      font-size: 11px; color: var(--text-3); border-top: 1px solid var(--border);
+      padding-top: 12px; margin-top: 14px; line-height: 1.6;
     }
 
     /* ── Country profiles ── */
     .info-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 12px;
-      margin: 0.5rem 0 1rem;
+      gap: 12px; margin: 0.5rem 0 1rem;
     }
     .info-card {
-      background: var(--surface);
-      border-radius: var(--radius);
-      padding: 16px;
-      border: 1px solid var(--border);
+      background: var(--surface); border-radius: var(--radius);
+      padding: 16px; border: 1px solid var(--border);
     }
     .info-flag { font-size: 1.6rem; margin-bottom: 6px; }
-    .info-country {
-      font-weight: 600;
-      font-size: 15px;
-      margin-bottom: 10px;
-      color: var(--text);
-    }
+    .info-country { font-weight: 600; font-size: 15px; margin-bottom: 10px; color: var(--text); }
     .info-row {
-      display: flex;
-      justify-content: space-between;
-      font-size: 12px;
-      margin-bottom: 6px;
-      gap: 8px;
+      display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 6px; gap: 8px;
     }
     .info-key { color: var(--text-2); flex-shrink: 0; }
     .info-val { font-weight: 500; color: var(--text); text-align: right; }
     .badge {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 500;
-      padding: 3px 10px;
-      border-radius: 99px;
-      margin-top: 10px;
+      display: inline-block; font-size: 11px; font-weight: 500;
+      padding: 3px 10px; border-radius: 99px; margin-top: 10px;
     }
-    .badge-green  { background: var(--green-light);  color: var(--green);  }
-    .badge-amber  { background: var(--amber-light);  color: var(--amber);  }
-    .badge-red    { background: var(--red-light);    color: var(--red);    }
-    .badge-blue   { background: var(--blue-light);   color: var(--blue);   }
+    .badge-green  { background: var(--green-light);  color: var(--green); }
+    .badge-amber  { background: var(--amber-light);  color: var(--amber); }
+    .badge-red    { background: var(--red-light);    color: var(--red); }
+    .badge-blue   { background: var(--blue-light);   color: var(--blue); }
     .badge-purple { background: var(--purple-light); color: var(--purple); }
+
+    /* ── Loan comparison tab ── */
+    .lc-intro {
+      font-size: 13px; color: var(--text-2); line-height: 1.65;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 14px 16px; margin-bottom: 1.5rem;
+    }
+    .lc-section-title {
+      font-family: 'Lora', Georgia, serif; font-size: 1rem; font-weight: 600;
+      color: var(--text); margin-bottom: 0.75rem; margin-top: 1.75rem;
+    }
+    .lc-section-title:first-of-type { margin-top: 0; }
+
+    /* Comparison table */
+    .lc-table-wrap { overflow-x: auto; margin-bottom: 1.5rem; border-radius: var(--radius); border: 1px solid var(--border); }
+    .lc-table {
+      width: 100%; border-collapse: collapse; font-size: 12px;
+      background: var(--surface);
+    }
+    .lc-table thead tr { border-bottom: 1px solid var(--border-2); }
+    .lc-table th {
+      padding: 10px 12px; text-align: left; font-size: 11px; font-weight: 500;
+      letter-spacing: 0.05em; text-transform: uppercase; color: var(--text-3);
+      background: var(--surface2); white-space: nowrap;
+    }
+    .lc-table th:first-child { min-width: 110px; border-right: 1px solid var(--border); }
+    .lc-table td {
+      padding: 10px 12px; vertical-align: middle; border-bottom: 1px solid var(--border);
+      color: var(--text-2); white-space: nowrap;
+    }
+    .lc-table td:first-child {
+      font-weight: 600; color: var(--text); border-right: 1px solid var(--border);
+      background: var(--surface); position: sticky; left: 0; z-index: 1;
+    }
+    .lc-table tr:last-child td { border-bottom: none; }
+    .lc-table tr:hover td { background: var(--surface2); }
+    .lc-table tr:hover td:first-child { background: var(--surface2); }
+    .apr-pill {
+      display: inline-block; padding: 2px 8px; border-radius: 99px;
+      font-weight: 600; font-size: 12px;
+    }
+    .apr-green  { background: var(--green-light);  color: var(--green); }
+    .apr-amber  { background: var(--amber-light);  color: var(--amber); }
+    .apr-red    { background: var(--red-light);    color: var(--red); }
+    .apr-blue   { background: var(--blue-light);   color: var(--blue); }
+    .tag-fixed    { color: var(--green); font-weight: 500; }
+    .tag-variable { color: var(--amber); font-weight: 500; }
+    .tag-ic       { color: var(--blue);  font-weight: 500; }
+    .tag-yes      { color: var(--green); font-weight: 500; }
+    .tag-no       { color: var(--red);   font-weight: 500; }
+    .tag-limited  { color: var(--amber); font-weight: 500; }
+
+    /* Hypothetical scenario */
+    .lc-scenario-header {
+      background: var(--surface2); border: 1px solid var(--border-2);
+      border-radius: var(--radius); padding: 12px 16px; margin-bottom: 1rem;
+    }
+    .lc-scenario-header p {
+      font-size: 12px; color: var(--text-2); margin-top: 4px; line-height: 1.5;
+    }
+    .lc-scenario-header strong { color: var(--text); }
+    .lc-bar-table { width: 100%; border-collapse: collapse; }
+    .lc-bar-row td { padding: 6px 0; vertical-align: middle; font-size: 12px; }
+    .lc-bar-country { width: 155px; color: var(--text-2); white-space: nowrap; padding-right: 10px !important; }
+    .lc-bar-wrap { flex: 1; background: var(--surface2); border-radius: 4px; height: 18px; overflow: hidden; position: relative; }
+    .lc-bar-fill { height: 100%; border-radius: 4px; transition: width 0.4s ease; }
+    .lc-bar-val { width: 95px; text-align: right; font-weight: 600; color: var(--text); padding-left: 10px !important; white-space: nowrap; }
+    .lc-monthly-val { width: 85px; text-align: right; color: var(--text-3); padding-left: 6px !important; white-space: nowrap; }
+    .lc-ic-note {
+      font-size: 11px; color: var(--text-3); margin-top: 10px;
+      font-style: italic; border-top: 1px solid var(--border); padding-top: 10px;
+    }
+    .lc-glossary {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 10px; margin-top: 0.5rem;
+    }
+    .lc-gloss-item {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 12px 14px;
+    }
+    .lc-gloss-term { font-weight: 600; font-size: 12px; color: var(--text); margin-bottom: 3px; }
+    .lc-gloss-def  { font-size: 11px; color: var(--text-3); line-height: 1.55; }
 
     /* ── Analysis tab ── */
     .analysis-intro {
-      font-family: 'Lora', Georgia, serif;
-      font-style: italic;
-      font-size: 1.1rem;
-      line-height: 1.7;
-      color: var(--text-2);
-      border-left: 3px solid var(--border-2);
-      padding-left: 1.25rem;
-      margin-bottom: 2rem;
+      font-family: 'Lora', Georgia, serif; font-style: italic; font-size: 1.1rem;
+      line-height: 1.7; color: var(--text-2); border-left: 3px solid var(--border-2);
+      padding-left: 1.25rem; margin-bottom: 2rem;
     }
     .analysis-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 16px;
-      margin-bottom: 2rem;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px; margin-bottom: 2rem;
     }
     .analysis-card {
-      background: var(--surface);
-      border-radius: var(--radius);
-      padding: 20px;
-      border: 1px solid var(--border);
+      background: var(--surface); border-radius: var(--radius);
+      padding: 20px; border: 1px solid var(--border);
     }
-    .analysis-card-icon {
-      font-size: 1.4rem;
-      margin-bottom: 10px;
-    }
+    .analysis-card-icon { font-size: 1.4rem; margin-bottom: 10px; }
     .analysis-card h3 {
-      font-family: 'Lora', Georgia, serif;
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: 8px;
-      color: var(--text);
-      line-height: 1.35;
+      font-family: 'Lora', Georgia, serif; font-size: 1rem; font-weight: 600;
+      margin-bottom: 8px; color: var(--text); line-height: 1.35;
     }
-    .analysis-card p {
-      font-size: 13px;
-      color: var(--text-2);
-      line-height: 1.65;
-    }
+    .analysis-card p { font-size: 13px; color: var(--text-2); line-height: 1.65; }
     .example-tag {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 500;
-      background: var(--surface2);
-      border: 1px solid var(--border-2);
-      border-radius: 6px;
-      padding: 3px 8px;
-      margin-top: 10px;
-      color: var(--text-2);
+      display: inline-block; font-size: 11px; font-weight: 500;
+      background: var(--surface2); border: 1px solid var(--border-2);
+      border-radius: 6px; padding: 3px 8px; margin-top: 10px; color: var(--text-2);
     }
     .cost-compare-row {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-top: 12px;
-      font-size: 12px;
+      display: flex; align-items: center; gap: 10px; margin-top: 12px; font-size: 12px;
     }
     .cost-bar-wrap { flex: 1; background: var(--surface2); border-radius: 4px; height: 7px; overflow: hidden; }
     .cost-bar { height: 100%; border-radius: 4px; }
     .cost-name { width: 120px; color: var(--text-2); flex-shrink: 0; }
     .cost-amount { width: 70px; text-align: right; font-weight: 500; color: var(--text); flex-shrink: 0; }
     .analysis-note {
-      font-size: 12px;
-      color: var(--text-3);
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 14px 16px;
-      line-height: 1.65;
+      font-size: 12px; color: var(--text-3); background: var(--surface);
+      border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; line-height: 1.65;
     }
     .analysis-note strong { color: var(--text-2); font-weight: 600; }
 
     /* ── Footer ── */
     footer {
-      margin-top: 3rem;
-      padding-top: 1rem;
-      border-top: 1px solid var(--border);
-      font-size: 11px;
-      color: var(--text-3);
-      text-align: center;
+      margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border);
+      font-size: 11px; color: var(--text-3); text-align: center;
     }
 
     @media (max-width: 600px) {
@@ -343,13 +310,13 @@
   <header class="page-header">
     <p class="eyebrow">Side project · Global higher education · 2024–25</p>
     <h1>What does a degree really cost?</h1>
-    <p class="subhead">Domestic/local students · tuition fees, loan interest rates & 4‑year costs · includes Hong Kong, UK, US, Singapore, Australia, Canada, Germany, France</p>
+    <p class="subhead">Domestic/local students · tuition fees, loan rates &amp; loan comparison · Hong Kong, UK, US, Singapore, Australia, Canada, Germany, France</p>
   </header>
 
   <nav class="tab-nav" id="tabNav">
     <button class="tab-btn active" data-tab="tuition">Tuition fees</button>
     <button class="tab-btn" data-tab="loans">Loan rates</button>
-    <button class="tab-btn" data-tab="total">4-year total</button>
+    <button class="tab-btn" data-tab="loancompare">Loan comparison</button>
     <button class="tab-btn" data-tab="profiles">Country profiles</button>
     <button class="tab-btn" data-tab="analysis">Beyond the numbers</button>
   </nav>
@@ -379,17 +346,17 @@
       </div>
     </div>
     <div class="legend-row">
-      <span><span class="legend-sq" style="background:var(--blue)"></span>Annual domestic tuition (USD)</span>
+      <span><span class="legend-sq" style="background:var(--blue)"></span>Annual domestic tuition (USD equiv.)</span>
       <span><span class="legend-sq" style="background:var(--red)"></span>US private benchmark</span>
       <span><span class="legend-sq" style="background:var(--purple)"></span>Singapore (subsidised)</span>
     </div>
     <div class="chart-wrap" style="height:310px">
-      <canvas id="tuitionChart" role="img" aria-label="Bar chart of annual domestic tuition fees in USD: Germany $157, France $2,964, HK $5,389, Canada $5,646, Singapore $8,250, Australia $6,175, UK $11,655, US in-state $11,610, US private $39,000.">Annual domestic tuition: Germany $157, France $2,964, HK $5,389, Canada $5,646, Singapore $8,250, Australia $6,175, UK $11,655, US in-state $11,610, US private $39,000.</canvas>
+      <canvas id="tuitionChart" role="img" aria-label="Horizontal bar chart of annual domestic tuition fees in USD: Germany $157, France $2,964, HK $5,389, Canada $5,646, Australia $6,175, Singapore $8,250, US in-state $11,610, UK $11,655, US private $39,000."></canvas>
     </div>
     <p class="source-note">Sources: HK Govt / UGC (HKD 42,100, frozen since 1997/98); UK Office for Students (£9,250 domestic cap); NCES (US in-state average); Singapore MOE subsidised rate ~SGD 11,200/yr avg across NUS/NTU/SMU; Statistics Canada (CAD 7,734); Study Australia. All converted to USD at 2024 rates.</p>
   </section>
 
-  <!-- ── Tab 2: Loans ── -->
+  <!-- ── Tab 2: Loan rates ── -->
   <section id="tab-loans" class="tab-panel">
     <div class="metric-grid">
       <div class="metric-card accent-green">
@@ -419,121 +386,328 @@
       <span><span class="legend-sq" style="background:var(--red)"></span>Higher interest ≥ 6%</span>
     </div>
     <div class="chart-wrap" style="height:360px">
-      <canvas id="loanChart" role="img" aria-label="Horizontal bar chart of effective student loan interest rates: Canada 0%, Germany 0%, France 0.5%, HK 3.0%, UK Plan 5 3.2%, Singapore 3.6%, Australia 3.6% CPI, UK Plan 2 6.2%, US 6.39%.">Loan rates: Canada 0%, Germany 0%, France 0.5%, HK 3%, UK Plan 5 3.2%, Singapore 3.6%, Australia 3.6% CPI, UK Plan 2 6.2%, US 6.39%.</canvas>
+      <canvas id="loanChart" role="img" aria-label="Horizontal bar chart of effective student loan interest rates: Canada 0%, Germany 0%, France 0.5%, HK 3.0%, UK Plan 5 3.2%, Singapore 3.6%, Australia 3.6% CPI, UK Plan 2 6.2%, US 6.39%."></canvas>
     </div>
     <p class="source-note">Singapore: MOE Tuition Fee Loan rate is linked to DBS/OCBC/UOB prevailing rate (~3.6% p.a.); interest accrues only after graduation. Canada eliminated federal interest on student loans in December 2023. Australia HECS-HELP is interest-free in real terms — debt is CPI-indexed annually (2025 indexation rate: ~3.6%). UK Plan 5 (new undergraduates from 2023/24): RPI + 0% = ~3.2%. UK Plan 2 (2012–2023): RPI + up to 3%, capped at 6% from September 2026. Sources: UK House of Commons Library; Educationdata.org; WFSFAA HK; Singapore MOE; Australian ATO.</p>
   </section>
 
-  <!-- ── Tab 3: 4-year total ── -->
-  <section id="tab-total" class="tab-panel">
-    <div class="metric-grid">
-      <div class="metric-card accent-green">
-        <div class="metric-label">Germany 4-yr</div>
-        <div class="metric-val">$628</div>
-        <div class="metric-sub">Semester admin fees only</div>
+  <!-- ── Tab 3: Loan Comparison ── -->
+  <section id="tab-loancompare" class="tab-panel">
+
+    <div class="lc-intro">
+      Loan rates alone don't tell you which deal is actually better. A 0% loan with a 5-year repayment window can mean higher monthly pressure than a 6% income-contingent loan you only repay when earning well. The table below uses standardised metrics so you can compare systems on the same terms.
+    </div>
+
+    <!-- Core metrics comparison table -->
+    <h2 class="lc-section-title">Core metrics — all countries</h2>
+    <div class="lc-table-wrap">
+      <table class="lc-table">
+        <thead>
+          <tr>
+            <th>Country</th>
+            <th>Effective APR</th>
+            <th>Rate type</th>
+            <th>Repayment mechanism</th>
+            <th>Standard term</th>
+            <th>Write-off / forgiveness</th>
+            <th>Early repayment charge</th>
+            <th>Overpay freely?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>🇩🇪 Germany (BAföG)</td>
+            <td><span class="apr-pill apr-green">0%</span></td>
+            <td><span class="tag-fixed">Fixed</span></td>
+            <td>Fixed monthly</td>
+            <td>Max 20 yrs; ~5 yr typical</td>
+            <td>No (50% loan, 50% grant)</td>
+            <td><span class="tag-yes">None</span></td>
+            <td><span class="tag-yes">Yes</span></td>
+          </tr>
+          <tr>
+            <td>🇨🇦 Canada (NSLSC)</td>
+            <td><span class="apr-pill apr-green">0%</span></td>
+            <td><span class="tag-fixed">Fixed</span></td>
+            <td>Fixed monthly</td>
+            <td>10 yrs</td>
+            <td>Partial — repayment assistance</td>
+            <td><span class="tag-yes">None</span></td>
+            <td><span class="tag-yes">Yes</span></td>
+          </tr>
+          <tr>
+            <td>🇫🇷 France (BNP/CEP)</td>
+            <td><span class="apr-pill apr-green">~0.5%</span></td>
+            <td><span class="tag-fixed">Fixed</span></td>
+            <td>Fixed monthly</td>
+            <td>~10 yrs</td>
+            <td>No</td>
+            <td><span class="tag-yes">None</span></td>
+            <td><span class="tag-yes">Yes</span></td>
+          </tr>
+          <tr>
+            <td>🇭🇰 Hong Kong (NGNL)</td>
+            <td><span class="apr-pill apr-blue">~3.0%</span></td>
+            <td><span class="tag-variable">Variable (NGNL)</span></td>
+            <td>Fixed monthly</td>
+            <td>Max 15 yrs</td>
+            <td>No</td>
+            <td><span class="tag-yes">None</span></td>
+            <td><span class="tag-yes">Yes</span></td>
+          </tr>
+          <tr>
+            <td>🇬🇧 UK Plan 5</td>
+            <td><span class="apr-pill apr-blue">~3.2%</span></td>
+            <td><span class="tag-variable">Variable (RPI)</span></td>
+            <td class="tag-ic">Income-contingent</td>
+            <td>40 yrs</td>
+            <td>Yes — written off after 40 yrs</td>
+            <td><span class="tag-yes">None</span></td>
+            <td><span class="tag-yes">Yes</span></td>
+          </tr>
+          <tr>
+            <td>🇸🇬 Singapore (MOE TFL)</td>
+            <td><span class="apr-pill apr-blue">~3.6%</span></td>
+            <td><span class="tag-variable">Variable (bank rate)</span></td>
+            <td>Fixed monthly</td>
+            <td>Max 20 yrs</td>
+            <td>No</td>
+            <td><span class="tag-yes">None</span></td>
+            <td><span class="tag-limited">Limited</span></td>
+          </tr>
+          <tr>
+            <td>🇦🇺 Australia (HECS-HELP)</td>
+            <td><span class="apr-pill apr-blue">~3.6% (CPI)</span></td>
+            <td><span class="tag-variable">Variable (CPI-indexed)</span></td>
+            <td class="tag-ic">Income-contingent</td>
+            <td>No fixed term</td>
+            <td>No (but debt grows slowly)</td>
+            <td><span class="tag-yes">None</span></td>
+            <td><span class="tag-yes">Yes (voluntary)</span></td>
+          </tr>
+          <tr>
+            <td>🇬🇧 UK Plan 2</td>
+            <td><span class="apr-pill apr-amber">~6.2%</span></td>
+            <td><span class="tag-variable">Variable (RPI + 3%)</span></td>
+            <td class="tag-ic">Income-contingent</td>
+            <td>30 yrs</td>
+            <td>Yes — written off after 30 yrs</td>
+            <td><span class="tag-yes">None</span></td>
+            <td><span class="tag-yes">Yes</span></td>
+          </tr>
+          <tr>
+            <td>🇺🇸 US Federal</td>
+            <td><span class="apr-pill apr-red">6.39%</span></td>
+            <td><span class="tag-fixed">Fixed</span></td>
+            <td>Fixed monthly (IDR options available)</td>
+            <td>10 yrs standard; up to 25 yrs IDR</td>
+            <td>Yes — IDR forgiveness after 20–25 yrs</td>
+            <td><span class="tag-yes">None</span></td>
+            <td><span class="tag-yes">Yes</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Hypothetical $20k scenario -->
+    <h2 class="lc-section-title">If you borrowed $20,000 — fixed-repayment systems</h2>
+    <div class="lc-scenario-header">
+      <strong>Hypothetical: $20,000 borrowed at graduation, repaid on standard terms.</strong>
+      <p>Income-contingent systems (UK, Australia) are excluded here as repayments depend on your salary, not a fixed schedule. All figures in USD at 2024 exchange rates.</p>
+    </div>
+
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px 18px;">
+      <div style="display:flex;gap:10px;font-size:11px;color:var(--text-3);margin-bottom:12px;font-weight:500;text-transform:uppercase;letter-spacing:0.05em;">
+        <div style="width:155px">Country</div>
+        <div style="flex:1">Total payable</div>
+        <div style="width:95px;text-align:right">Total</div>
+        <div style="width:85px;text-align:right">Monthly</div>
       </div>
-      <div class="metric-card accent-blue">
-        <div class="metric-label">HK 4-yr total</div>
-        <div class="metric-val">$21,556</div>
-        <div class="metric-sub">≈ HKD 168,400</div>
+      <!-- Germany -->
+      <div style="display:flex;align-items:center;gap:10px;padding:7px 0;border-top:1px solid var(--border);">
+        <div style="width:155px;font-size:12px;color:var(--text-2)">🇩🇪 Germany (5 yr)</div>
+        <div style="flex:1;background:var(--surface2);border-radius:4px;height:14px;overflow:hidden;"><div style="width:12.8%;height:100%;border-radius:4px;background:var(--green)"></div></div>
+        <div style="width:95px;text-align:right;font-weight:600;font-size:12px;color:var(--text)">$20,000</div>
+        <div style="width:85px;text-align:right;font-size:11px;color:var(--text-3)">~$333/mo</div>
       </div>
-      <div class="metric-card accent-amber">
-        <div class="metric-label">UK avg debt at graduation</div>
-        <div class="metric-val">$71,472</div>
-        <div class="metric-sub">£53,000 incl. maintenance loans</div>
+      <!-- Canada -->
+      <div style="display:flex;align-items:center;gap:10px;padding:7px 0;border-top:1px solid var(--border);">
+        <div style="width:155px;font-size:12px;color:var(--text-2)">🇨🇦 Canada (10 yr)</div>
+        <div style="flex:1;background:var(--surface2);border-radius:4px;height:14px;overflow:hidden;"><div style="width:12.8%;height:100%;border-radius:4px;background:var(--green)"></div></div>
+        <div style="width:95px;text-align:right;font-weight:600;font-size:12px;color:var(--text)">$20,000</div>
+        <div style="width:85px;text-align:right;font-size:11px;color:var(--text-3)">~$167/mo</div>
       </div>
-      <div class="metric-card accent-red">
-        <div class="metric-label">US private 4-yr total</div>
-        <div class="metric-val">$156,000</div>
-        <div class="metric-sub">Tuition only, avg private</div>
+      <!-- France -->
+      <div style="display:flex;align-items:center;gap:10px;padding:7px 0;border-top:1px solid var(--border);">
+        <div style="width:155px;font-size:12px;color:var(--text-2)">🇫🇷 France (10 yr)</div>
+        <div style="flex:1;background:var(--surface2);border-radius:4px;height:14px;overflow:hidden;"><div style="width:13.1%;height:100%;border-radius:4px;background:var(--green)"></div></div>
+        <div style="width:95px;text-align:right;font-weight:600;font-size:12px;color:var(--text)">~$20,513</div>
+        <div style="width:85px;text-align:right;font-size:11px;color:var(--text-3)">~$171/mo</div>
+      </div>
+      <!-- HK -->
+      <div style="display:flex;align-items:center;gap:10px;padding:7px 0;border-top:1px solid var(--border);">
+        <div style="width:155px;font-size:12px;color:var(--text-2)">🇭🇰 Hong Kong (15 yr)</div>
+        <div style="flex:1;background:var(--surface2);border-radius:4px;height:14px;overflow:hidden;"><div style="width:15.9%;height:100%;border-radius:4px;background:var(--blue)"></div></div>
+        <div style="width:95px;text-align:right;font-weight:600;font-size:12px;color:var(--text)">~$24,840</div>
+        <div style="width:85px;text-align:right;font-size:11px;color:var(--text-3)">~$138/mo</div>
+      </div>
+      <!-- Singapore -->
+      <div style="display:flex;align-items:center;gap:10px;padding:7px 0;border-top:1px solid var(--border);">
+        <div style="width:155px;font-size:12px;color:var(--text-2)">🇸🇬 Singapore (20 yr)</div>
+        <div style="flex:1;background:var(--surface2);border-radius:4px;height:14px;overflow:hidden;"><div style="width:18.0%;height:100%;border-radius:4px;background:var(--blue)"></div></div>
+        <div style="width:95px;text-align:right;font-weight:600;font-size:12px;color:var(--text)">~$28,090</div>
+        <div style="width:85px;text-align:right;font-size:11px;color:var(--text-3)">~$117/mo</div>
+      </div>
+      <!-- US -->
+      <div style="display:flex;align-items:center;gap:10px;padding:7px 0;border-top:1px solid var(--border);">
+        <div style="width:155px;font-size:12px;color:var(--text-2)">🇺🇸 US Federal (10 yr)</div>
+        <div style="flex:1;background:var(--surface2);border-radius:4px;height:14px;overflow:hidden;"><div style="width:17.3%;height:100%;border-radius:4px;background:var(--red)"></div></div>
+        <div style="width:95px;text-align:right;font-weight:600;font-size:12px;color:var(--text)">~$27,011</div>
+        <div style="width:85px;text-align:right;font-size:11px;color:var(--text-3)">~$225/mo</div>
+      </div>
+      <p class="lc-ic-note">UK Plan 2 &amp; Plan 5 and Australia HECS-HELP use income-contingent repayment — you pay 9% of income above a threshold, not a fixed monthly amount. Total payable depends entirely on career earnings and is excluded from the scenario above.</p>
+    </div>
+
+    <!-- Glossary -->
+    <h2 class="lc-section-title" style="margin-top:1.75rem">Key terms explained</h2>
+    <div class="lc-glossary">
+      <div class="lc-gloss-item">
+        <div class="lc-gloss-term">APR (Annual Percentage Rate)</div>
+        <div class="lc-gloss-def">The true annual cost of borrowing, incorporating the base interest rate and any mandatory upfront fees. The single most useful number for comparing loans.</div>
+      </div>
+      <div class="lc-gloss-item">
+        <div class="lc-gloss-term">Fixed vs Variable rate</div>
+        <div class="lc-gloss-def">Fixed rates stay constant for the full term — predictable but sometimes higher. Variable rates move with an index (RPI, CPI, bank rate) — can fall, but can also rise unexpectedly.</div>
+      </div>
+      <div class="lc-gloss-item">
+        <div class="lc-gloss-term">Income-contingent repayment</div>
+        <div class="lc-gloss-def">Repayments are calculated as a percentage of your income above a threshold. If you earn less, you pay less. Remaining debt is written off after the term ends.</div>
+      </div>
+      <div class="lc-gloss-item">
+        <div class="lc-gloss-term">Early repayment charge (ERC)</div>
+        <div class="lc-gloss-def">A penalty some lenders charge if you repay the loan ahead of schedule. None of the systems here carry an ERC — you can always overpay without penalty.</div>
+      </div>
+      <div class="lc-gloss-item">
+        <div class="lc-gloss-term">Loan term</div>
+        <div class="lc-gloss-def">How long you have to repay. Longer terms lower monthly payments but increase total interest paid. Income-contingent systems have soft write-off deadlines instead.</div>
+      </div>
+      <div class="lc-gloss-item">
+        <div class="lc-gloss-term">Total amount payable</div>
+        <div class="lc-gloss-def">Every payment you will ever make — principal + interest + fees. This is the real cost of the debt, and the number to compare when choosing between two loan offers.</div>
       </div>
     </div>
-    <div class="legend-row">
-      <span><span class="legend-sq" style="background:var(--blue)"></span>4-year tuition total</span>
-      <span><span class="legend-sq" style="background:var(--red)"></span>US private total</span>
-      <span><span class="legend-sq" style="background:var(--purple)"></span>Singapore (subsidised)</span>
-    </div>
-    <div class="chart-wrap" style="height:310px">
-      <canvas id="totalChart" role="img" aria-label="Bar chart of 4-year tuition totals: Germany $628, France $11,856, HK $21,556, Canada $22,584, Australia $24,700, Singapore $33,000, UK $46,620, US in-state $46,440, US private $156,000.">4-yr totals: Germany $628, France $11,856, HK $21,556, Canada $22,584, Australia $24,700, Singapore $33,000, UK $46,620, US in-state $46,440, US private $156,000.</canvas>
-    </div>
-    <p class="source-note">Singapore 4-year total based on weighted average subsidised fees for citizens across NUS/NTU/SMU (~SGD 8,500–11,500/yr, average ~SGD 10,800 → ~$8,250 USD/yr). UK average debt figure (£53,000) is from UK Government forecast for 2024–25 starters and includes maintenance loans, not tuition alone. US average debt at graduation ($38,370) from The College Investor, 2024 cohort — lower than the 4-year private total shown because many students attend public universities. Tuition costs only; living expenses not included.</p>
+
+    <p class="source-note" style="margin-top:1.25rem">Hypothetical calculations use standard amortisation formula at stated APR. Germany: 0% over 5 yrs. Canada: 0% over 10 yrs. France: 0.5% over 10 yrs. HK: 3.0% over 15 yrs. Singapore: 3.6% over 20 yrs. US: 6.39% over 10 yrs. Rounded to nearest dollar. Real repayments depend on precise draw-down dates, local currency conversion, and any income-linked deferral. This is illustrative only.</p>
   </section>
 
   <!-- ── Tab 4: Country profiles ── -->
   <section id="tab-profiles" class="tab-panel">
     <div class="info-grid">
+
       <div class="info-card">
         <div class="info-flag">🇭🇰</div>
         <div class="info-country">Hong Kong</div>
-        <div class="info-row"><span class="info-key">Annual fee</span><span class="info-val">HKD 42,100</span></div>
-        <div class="info-row"><span class="info-key">4-yr total</span><span class="info-val">HKD 168,400 (~$21.6k)</span></div>
-        <div class="info-row"><span class="info-key">Loan rate</span><span class="info-val">~3.0% (NGNL)</span></div>
-        <div class="info-row"><span class="info-key">Frozen since</span><span class="info-val">1997</span></div>
-        <span class="badge badge-green">Very affordable</span>
+        <div class="info-row"><span class="info-key">Annual tuition (USD)</span><span class="info-val">~$5,389</span></div>
+        <div class="info-row"><span class="info-key">4-yr tuition total (USD)</span><span class="info-val">~$21,556</span></div>
+        <div class="info-row"><span class="info-key">Student loan APR</span><span class="info-val">~3.0% (NGNL)</span></div>
+        <div class="info-row"><span class="info-key">Rate type</span><span class="info-val">Variable (NGNL basis)</span></div>
+        <div class="info-row"><span class="info-key">Repayment</span><span class="info-val">Fixed monthly, max 15 yrs</span></div>
+        <div class="info-row"><span class="info-key">Loan write-off</span><span class="info-val">None</span></div>
+        <div class="info-row"><span class="info-key">Early repayment charge</span><span class="info-val">None</span></div>
+        <span class="badge badge-green">Very affordable tuition</span>
       </div>
+
       <div class="info-card">
         <div class="info-flag">🇸🇬</div>
         <div class="info-country">Singapore</div>
-        <div class="info-row"><span class="info-key">Annual subsidised fee</span><span class="info-val">~SGD 11,000–12,000</span></div>
-        <div class="info-row"><span class="info-key">4-yr total</span><span class="info-val">~SGD 44,000 (~$33k)</span></div>
-        <div class="info-row"><span class="info-key">MOE loan rate</span><span class="info-val">~3.6% (post-graduation)</span></div>
-        <div class="info-row"><span class="info-key">Tuition grant</span><span class="info-val">Citizens &amp; PRs</span></div>
+        <div class="info-row"><span class="info-key">Annual tuition (USD)</span><span class="info-val">~$8,250</span></div>
+        <div class="info-row"><span class="info-key">4-yr tuition total (USD)</span><span class="info-val">~$33,000</span></div>
+        <div class="info-row"><span class="info-key">Student loan APR</span><span class="info-val">~3.6% (MOE TFL)</span></div>
+        <div class="info-row"><span class="info-key">Rate type</span><span class="info-val">Variable (bank rate)</span></div>
+        <div class="info-row"><span class="info-key">Repayment</span><span class="info-val">Fixed monthly, max 20 yrs</span></div>
+        <div class="info-row"><span class="info-key">Loan write-off</span><span class="info-val">None</span></div>
+        <div class="info-row"><span class="info-key">Early repayment charge</span><span class="info-val">None</span></div>
         <span class="badge badge-blue">Subsidised &amp; transparent</span>
       </div>
+
       <div class="info-card">
         <div class="info-flag">🇬🇧</div>
         <div class="info-country">United Kingdom</div>
-        <div class="info-row"><span class="info-key">Annual fee cap</span><span class="info-val">£9,250</span></div>
-        <div class="info-row"><span class="info-key">Loan (Plan 5)</span><span class="info-val">RPI + 0% (~3.2%)</span></div>
-        <div class="info-row"><span class="info-key">Loan (Plan 2)</span><span class="info-val">RPI + 3% (6% cap)</span></div>
-        <div class="info-row"><span class="info-key">Repayment term</span><span class="info-val">40 yrs, income-based</span></div>
+        <div class="info-row"><span class="info-key">Annual tuition (USD)</span><span class="info-val">~$11,655</span></div>
+        <div class="info-row"><span class="info-key">4-yr tuition total (USD)</span><span class="info-val">~$46,620</span></div>
+        <div class="info-row"><span class="info-key">Student loan APR</span><span class="info-val">Plan 5: ~3.2% / Plan 2: ~6.2%</span></div>
+        <div class="info-row"><span class="info-key">Rate type</span><span class="info-val">Variable (RPI-linked)</span></div>
+        <div class="info-row"><span class="info-key">Repayment</span><span class="info-val">Income-contingent (9% above threshold)</span></div>
+        <div class="info-row"><span class="info-key">Loan write-off</span><span class="info-val">40 yrs (Plan 5) / 30 yrs (Plan 2)</span></div>
+        <div class="info-row"><span class="info-key">Early repayment charge</span><span class="info-val">None</span></div>
         <span class="badge badge-amber">High debt burden</span>
       </div>
+
       <div class="info-card">
         <div class="info-flag">🇺🇸</div>
         <div class="info-country">United States</div>
-        <div class="info-row"><span class="info-key">In-state public</span><span class="info-val">~$11,610 / yr</span></div>
-        <div class="info-row"><span class="info-key">Private average</span><span class="info-val">~$39,000 / yr</span></div>
-        <div class="info-row"><span class="info-key">Federal rate</span><span class="info-val">6.39% (2025–26)</span></div>
-        <div class="info-row"><span class="info-key">Avg debt (2024)</span><span class="info-val">$38,370</span></div>
-        <span class="badge badge-red">Wide variation</span>
+        <div class="info-row"><span class="info-key">Annual tuition (USD)</span><span class="info-val">$11,610 (in-state) / $39,000 (private)</span></div>
+        <div class="info-row"><span class="info-key">4-yr tuition total (USD)</span><span class="info-val">$46,440 / $156,000</span></div>
+        <div class="info-row"><span class="info-key">Student loan APR</span><span class="info-val">6.39% (federal, 2025–26)</span></div>
+        <div class="info-row"><span class="info-key">Rate type</span><span class="info-val">Fixed</span></div>
+        <div class="info-row"><span class="info-key">Repayment</span><span class="info-val">Fixed monthly, 10–25 yrs (IDR avail.)</span></div>
+        <div class="info-row"><span class="info-key">Loan write-off</span><span class="info-val">IDR forgiveness after 20–25 yrs</span></div>
+        <div class="info-row"><span class="info-key">Early repayment charge</span><span class="info-val">None</span></div>
+        <span class="badge badge-red">Wide variation by institution</span>
       </div>
+
       <div class="info-card">
         <div class="info-flag">🇦🇺</div>
         <div class="info-country">Australia</div>
-        <div class="info-row"><span class="info-key">HECS contribution</span><span class="info-val">~AUD 9,500 / yr</span></div>
-        <div class="info-row"><span class="info-key">Loan interest</span><span class="info-val">0% real (CPI-indexed)</span></div>
-        <div class="info-row"><span class="info-key">Repayment</span><span class="info-val">Income-contingent</span></div>
-        <div class="info-row"><span class="info-key">Avg HECS debt</span><span class="info-val">AUD 27,640 (2024)</span></div>
+        <div class="info-row"><span class="info-key">Annual tuition (USD)</span><span class="info-val">~$6,175</span></div>
+        <div class="info-row"><span class="info-key">4-yr tuition total (USD)</span><span class="info-val">~$24,700</span></div>
+        <div class="info-row"><span class="info-key">Student loan APR</span><span class="info-val">~3.6% (CPI-indexed)</span></div>
+        <div class="info-row"><span class="info-key">Rate type</span><span class="info-val">Variable (CPI-linked, not true interest)</span></div>
+        <div class="info-row"><span class="info-key">Repayment</span><span class="info-val">Income-contingent, no fixed term</span></div>
+        <div class="info-row"><span class="info-key">Loan write-off</span><span class="info-val">None (but debt preserved)</span></div>
+        <div class="info-row"><span class="info-key">Early repayment charge</span><span class="info-val">None</span></div>
         <span class="badge badge-green">Fair, income-linked</span>
       </div>
+
       <div class="info-card">
         <div class="info-flag">🇨🇦</div>
         <div class="info-country">Canada</div>
-        <div class="info-row"><span class="info-key">Avg annual fee</span><span class="info-val">CAD 7,734</span></div>
-        <div class="info-row"><span class="info-key">Federal loan rate</span><span class="info-val">0% (since Dec 2023)</span></div>
-        <div class="info-row"><span class="info-key">Provincial variation</span><span class="info-val">NL cheapest, NS highest</span></div>
-        <div class="info-row"><span class="info-key">Intl students</span><span class="info-val">~CAD 41,746 / yr</span></div>
+        <div class="info-row"><span class="info-key">Annual tuition (USD)</span><span class="info-val">~$5,646</span></div>
+        <div class="info-row"><span class="info-key">4-yr tuition total (USD)</span><span class="info-val">~$22,584</span></div>
+        <div class="info-row"><span class="info-key">Student loan APR</span><span class="info-val">0% (federal, since Dec 2023)</span></div>
+        <div class="info-row"><span class="info-key">Rate type</span><span class="info-val">Fixed</span></div>
+        <div class="info-row"><span class="info-key">Repayment</span><span class="info-val">Fixed monthly, max 10 yrs</span></div>
+        <div class="info-row"><span class="info-key">Loan write-off</span><span class="info-val">Partial (repayment assistance)</span></div>
+        <div class="info-row"><span class="info-key">Early repayment charge</span><span class="info-val">None</span></div>
         <span class="badge badge-green">Interest-free federal loans</span>
       </div>
+
       <div class="info-card">
         <div class="info-flag">🇩🇪</div>
         <div class="info-country">Germany</div>
-        <div class="info-row"><span class="info-key">Tuition (public)</span><span class="info-val">Effectively free</span></div>
-        <div class="info-row"><span class="info-key">Semester fees</span><span class="info-val">€100–400 / semester</span></div>
-        <div class="info-row"><span class="info-key">Student loan (BAföG)</span><span class="info-val">0%</span></div>
-        <div class="info-row"><span class="info-key">Repayment</span><span class="info-val">Income-based, capped</span></div>
+        <div class="info-row"><span class="info-key">Annual tuition (USD)</span><span class="info-val">~$157 (semester fees only)</span></div>
+        <div class="info-row"><span class="info-key">4-yr tuition total (USD)</span><span class="info-val">~$628</span></div>
+        <div class="info-row"><span class="info-key">Student loan APR</span><span class="info-val">0% (BAföG)</span></div>
+        <div class="info-row"><span class="info-key">Rate type</span><span class="info-val">Fixed (0% — 50% grant, 50% loan)</span></div>
+        <div class="info-row"><span class="info-key">Repayment</span><span class="info-val">Fixed monthly, ~5 yr typical</span></div>
+        <div class="info-row"><span class="info-key">Loan write-off</span><span class="info-val">Capped at €10,010 total repayable</span></div>
+        <div class="info-row"><span class="info-key">Early repayment charge</span><span class="info-val">None</span></div>
         <span class="badge badge-green">Near-zero cost</span>
       </div>
+
       <div class="info-card">
         <div class="info-flag">🇫🇷</div>
         <div class="info-country">France</div>
-        <div class="info-row"><span class="info-key">Annual fee (Bachelor)</span><span class="info-val">€2,850 (~$2,964)</span></div>
-        <div class="info-row"><span class="info-key">Loan rate</span><span class="info-val">Very low (~0.5%)</span></div>
-        <div class="info-row"><span class="info-key">Govt education spend</span><span class="info-val">5.5% of GDP</span></div>
-        <div class="info-row"><span class="info-key">Grandes Écoles</span><span class="info-val">€6,000–18,000 / yr</span></div>
+        <div class="info-row"><span class="info-key">Annual tuition (USD)</span><span class="info-val">~$2,964</span></div>
+        <div class="info-row"><span class="info-key">4-yr tuition total (USD)</span><span class="info-val">~$11,856</span></div>
+        <div class="info-row"><span class="info-key">Student loan APR</span><span class="info-val">~0.5% (state-guaranteed)</span></div>
+        <div class="info-row"><span class="info-key">Rate type</span><span class="info-val">Fixed</span></div>
+        <div class="info-row"><span class="info-key">Repayment</span><span class="info-val">Fixed monthly, ~10 yrs</span></div>
+        <div class="info-row"><span class="info-key">Loan write-off</span><span class="info-val">None</span></div>
+        <div class="info-row"><span class="info-key">Early repayment charge</span><span class="info-val">None</span></div>
         <span class="badge badge-green">Heavily subsidised</span>
       </div>
+
     </div>
     <p class="source-note">All figures for domestic/local students at public universities. Singapore data based on MOE tuition grant rates for citizens (AY2024/25), weighted average across NUS/NTU/SMU. International student fees are considerably higher in most countries except Germany.</p>
   </section>
@@ -543,7 +717,6 @@
     <p class="analysis-intro">Price tags only tell part of the story. Until you hit the wall of trying to put a price tag on what kind of additional value you get by entering a decent university, the numbers above look deceptively simple.</p>
 
     <div class="analysis-grid">
-
       <div class="analysis-card">
         <div class="analysis-card-icon">🏛️</div>
         <h3>Prestige & alumni networks don't always cost more</h3>
@@ -580,7 +753,6 @@
         <p style="margin-top: 10px">This frictionless mobility is a structural benefit that goes well beyond cost. A student at a French public university paying ~€2,850/year may have access to academic networks spanning 50+ countries — something a higher-fee institution elsewhere may struggle to replicate.</p>
         <span class="example-tag">EU Erasmus+ covers 30+ countries · 800,000+ students annually</span>
       </div>
-
     </div>
 
     <div class="analysis-note">
@@ -608,7 +780,7 @@
     if (panel) panel.classList.add('active');
     if (btn)   btn.classList.add('active');
     setTimeout(() => {
-      [tuitionCI, loanCI, totalCI].forEach(c => c && c.resize());
+      [tuitionCI, loanCI].forEach(c => c && c.resize());
     }, 60);
   }
 
@@ -627,13 +799,12 @@
   const RED    = dark ? '#E06060' : '#C93A39';
   const PURPLE = dark ? '#A87DE0' : '#7B52C7';
   const MUTED  = dark ? '#4A4A46' : '#C4C0B8';
-
   const GREEN  = dark ? '#5CBF63' : '#2A6B2E';
   const AMBER  = dark ? '#E0AA50' : '#8C5A0A';
 
-  // ── Tuition chart ──
-  const tuitionLabels = ['🇩🇪 Germany','🇫🇷 France','🇭🇰 HK','🇨🇦 Canada','🇦🇺 Australia','🇸🇬 Singapore','🇬🇧 UK','🇺🇸 US in-state','🇺🇸 US private'];
-  const tuitionData   = [157, 2964, 5389, 5646, 6175, 8250, 11655, 11610, 39000];
+  // ── Tuition chart — horizontal bar ──
+  const tuitionLabels = ['🇩🇪 Germany','🇫🇷 France','🇭🇰 HK','🇨🇦 Canada','🇦🇺 Australia','🇸🇬 Singapore','🇺🇸 US in-state','🇬🇧 UK','🇺🇸 US private'];
+  const tuitionData   = [157, 2964, 5389, 5646, 6175, 8250, 11610, 11655, 39000];
   const tuitionColors = tuitionData.map((_, i) => {
     if (i === 2) return BLUE;
     if (i === 5) return PURPLE;
@@ -645,22 +816,23 @@
     type: 'bar',
     data: { labels: tuitionLabels, datasets: [{ data: tuitionData, backgroundColor: tuitionColors, borderRadius: 5, barPercentage: 0.65 }] },
     options: {
+      indexAxis: 'y',
       responsive: true, maintainAspectRatio: false,
-      plugins: { legend: { display: false }, tooltip: { callbacks: { label: c => ' $' + c.parsed.y.toLocaleString() } } },
+      plugins: { legend: { display: false }, tooltip: { callbacks: { label: c => ' $' + c.parsed.x.toLocaleString() } } },
       scales: {
-        x: { ticks: { color: tx, font: { size: 10 }, maxRotation: 30, autoSkip: false }, grid: { display: false }, border: { display: false } },
-        y: { ticks: { color: tx, font: { size: 10 }, callback: v => '$' + v.toLocaleString() }, grid: { color: grid }, border: { display: false } }
+        x: { ticks: { color: tx, font: { size: 10 }, callback: v => '$' + v.toLocaleString() }, grid: { color: grid }, border: { display: false } },
+        y: { ticks: { color: lbl, font: { size: 10 } }, grid: { display: false }, border: { display: false } }
       }
     }
   });
 
-  // ── Loan chart ──
+  // ── Loan rates chart — horizontal bar ──
   const loanLabels = ['🇨🇦 Canada','🇩🇪 Germany','🇫🇷 France','🇭🇰 HK','🇬🇧 UK Plan 5','🇸🇬 Singapore','🇦🇺 Australia (CPI)','🇬🇧 UK Plan 2','🇺🇸 US federal'];
   const loanData   = [0, 0, 0.5, 3.0, 3.2, 3.6, 3.6, 6.2, 6.39];
   const loanColors = loanData.map(v => {
-    if (v === 0)   return GREEN;
-    if (v <= 3.2)  return AMBER;
-    if (v >= 6)    return RED;
+    if (v === 0)  return GREEN;
+    if (v <= 3.2) return AMBER;
+    if (v >= 6)   return RED;
     return BLUE;
   });
 
@@ -678,31 +850,8 @@
     }
   });
 
-  // ── Total chart ──
-  const totalLabels = ['🇩🇪 Germany','🇫🇷 France','🇭🇰 HK','🇨🇦 Canada','🇦🇺 Australia','🇸🇬 Singapore','🇬🇧 UK','🇺🇸 US in-state','🇺🇸 US private'];
-  const totalData   = [628, 11856, 21556, 22584, 24700, 33000, 46620, 46440, 156000];
-  const totalColors = totalData.map((_, i) => {
-    if (i === 2) return BLUE;
-    if (i === 5) return PURPLE;
-    if (i === 8) return RED;
-    return MUTED;
-  });
-
-  const totalCI = new Chart(document.getElementById('totalChart'), {
-    type: 'bar',
-    data: { labels: totalLabels, datasets: [{ data: totalData, backgroundColor: totalColors, borderRadius: 5, barPercentage: 0.65 }] },
-    options: {
-      responsive: true, maintainAspectRatio: false,
-      plugins: { legend: { display: false }, tooltip: { callbacks: { label: c => ' $' + c.parsed.y.toLocaleString() } } },
-      scales: {
-        x: { ticks: { color: tx, font: { size: 10 }, maxRotation: 30, autoSkip: false }, grid: { display: false }, border: { display: false } },
-        y: { ticks: { color: tx, font: { size: 10 }, callback: v => '$' + v.toLocaleString() }, grid: { color: grid }, border: { display: false } }
-      }
-    }
-  });
-
   window.addEventListener('resize', () => {
-    [tuitionCI, loanCI, totalCI].forEach(c => c && c.resize());
+    [tuitionCI, loanCI].forEach(c => c && c.resize());
   });
 
   activate('tuition');
