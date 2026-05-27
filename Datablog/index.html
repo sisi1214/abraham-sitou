@@ -291,6 +291,18 @@
     }
     .analysis-note strong { color: var(--text-2); font-weight: 600; }
 
+    /* ── Live data ── */
+    .live-data {
+      transition: color 0.3s;
+    }
+    .live-updated-badge {
+      font-size: 0.75rem;
+      opacity: 0.65;
+      margin-top: 1rem;
+      padding: 0.5rem 0;
+      border-top: 1px solid currentColor;
+    }
+
     /* ── Footer ── */
     footer {
       margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border);
@@ -331,17 +343,17 @@
       </div>
       <div class="metric-card accent-blue">
         <div class="metric-label">HK local fee</div>
-        <div class="metric-val">$5,389</div>
+        <div class="metric-val"><span data-live="tuition.HK">$5,389</span></div>
         <div class="metric-sub">Frozen since 1997</div>
       </div>
       <div class="metric-card accent-amber">
         <div class="metric-label">Singapore (MOE subsidised)</div>
-        <div class="metric-val">$8,250</div>
+        <div class="metric-val"><span data-live="tuition.SG">$8,250</span></div>
         <div class="metric-sub">Citizens / PRs</div>
       </div>
       <div class="metric-card accent-red">
         <div class="metric-label">US private average</div>
-        <div class="metric-val">$39,000</div>
+        <div class="metric-val"><span data-live="tuition.US_private">$39,000</span></div>
         <div class="metric-sub">Per year (2024)</div>
       </div>
     </div>
@@ -366,17 +378,17 @@
       </div>
       <div class="metric-card accent-blue">
         <div class="metric-label">HK rate (NGNL basis)</div>
-        <div class="metric-val">~3.0%</div>
+        <div class="metric-val"><span data-live="rate.HK">~3.0%</span></div>
         <div class="metric-sub">No-gain-no-loss, cost recovery</div>
       </div>
       <div class="metric-card accent-amber">
         <div class="metric-label">UK Plan 2 rate</div>
-        <div class="metric-val">6.2%</div>
+        <div class="metric-val"><span data-live="rate.UK_plan2">6.2%</span></div>
         <div class="metric-sub">Capped at 6% from Sep 2026</div>
       </div>
       <div class="metric-card accent-red">
         <div class="metric-label">Highest rate</div>
-        <div class="metric-val">6.39%</div>
+        <div class="metric-val"><span data-live="rate.US">6.39%</span></div>
         <div class="metric-sub">US federal 2025–26</div>
       </div>
     </div>
@@ -417,7 +429,7 @@
         <tbody>
           <tr>
             <td>🇩🇪 Germany (BAföG)</td>
-            <td><span class="apr-pill apr-green">0%</span></td>
+            <td><span class="apr-pill apr-green"><span data-live="rate.DE">0%</span></span></td>
             <td><span class="tag-fixed">Fixed</span></td>
             <td>Fixed monthly</td>
             <td>Max 20 yrs; ~5 yr typical</td>
@@ -427,7 +439,7 @@
           </tr>
           <tr>
             <td>🇨🇦 Canada (NSLSC)</td>
-            <td><span class="apr-pill apr-green">0%</span></td>
+            <td><span class="apr-pill apr-green"><span data-live="rate.CA">0%</span></span></td>
             <td><span class="tag-fixed">Fixed</span></td>
             <td>Fixed monthly</td>
             <td>10 yrs</td>
@@ -437,7 +449,7 @@
           </tr>
           <tr>
             <td>🇫🇷 France (BNP/CEP)</td>
-            <td><span class="apr-pill apr-green">~0.5%</span></td>
+            <td><span class="apr-pill apr-green">~<span data-live="rate.FR">0.5%</span></span></td>
             <td><span class="tag-fixed">Fixed</span></td>
             <td>Fixed monthly</td>
             <td>~10 yrs</td>
@@ -447,7 +459,7 @@
           </tr>
           <tr>
             <td>🇭🇰 Hong Kong (NGNL)</td>
-            <td><span class="apr-pill apr-blue">~3.0%</span></td>
+            <td><span class="apr-pill apr-blue">~<span data-live="rate.HK">3.0%</span></span></td>
             <td><span class="tag-variable">Variable (NGNL)</span></td>
             <td>Fixed monthly</td>
             <td>Max 15 yrs</td>
@@ -457,7 +469,7 @@
           </tr>
           <tr>
             <td>🇬🇧 UK Plan 5</td>
-            <td><span class="apr-pill apr-blue">~3.2%</span></td>
+            <td><span class="apr-pill apr-blue">~<span data-live="rate.UK_plan5">3.2%</span></span></td>
             <td><span class="tag-variable">Variable (RPI)</span></td>
             <td class="tag-ic">Income-contingent</td>
             <td>40 yrs</td>
@@ -467,7 +479,7 @@
           </tr>
           <tr>
             <td>🇸🇬 Singapore (MOE TFL)</td>
-            <td><span class="apr-pill apr-blue">~3.6%</span></td>
+            <td><span class="apr-pill apr-blue">~<span data-live="rate.SG">3.6%</span></span></td>
             <td><span class="tag-variable">Variable (bank rate)</span></td>
             <td>Fixed monthly</td>
             <td>Max 20 yrs</td>
@@ -477,7 +489,7 @@
           </tr>
           <tr>
             <td>🇦🇺 Australia (HECS-HELP)</td>
-            <td><span class="apr-pill apr-blue">~3.6% (CPI)</span></td>
+            <td><span class="apr-pill apr-blue">~<span data-live="rate.AU_cpi">3.6%</span> (CPI)</span></td>
             <td><span class="tag-variable">Variable (CPI-indexed)</span></td>
             <td class="tag-ic">Income-contingent</td>
             <td>No fixed term</td>
@@ -487,7 +499,7 @@
           </tr>
           <tr>
             <td>🇬🇧 UK Plan 2</td>
-            <td><span class="apr-pill apr-amber">~6.2%</span></td>
+            <td><span class="apr-pill apr-amber">~<span data-live="rate.UK_plan2">6.2%</span></span></td>
             <td><span class="tag-variable">Variable (RPI + 3%)</span></td>
             <td class="tag-ic">Income-contingent</td>
             <td>30 yrs</td>
@@ -497,7 +509,7 @@
           </tr>
           <tr>
             <td>🇺🇸 US Federal</td>
-            <td><span class="apr-pill apr-red">6.39%</span></td>
+            <td><span class="apr-pill apr-red"><span data-live="rate.US">6.39%</span></span></td>
             <td><span class="tag-fixed">Fixed</span></td>
             <td>Fixed monthly (IDR options available)</td>
             <td>10 yrs standard; up to 25 yrs IDR</td>
@@ -607,9 +619,9 @@
       <div class="info-card">
         <div class="info-flag">🇭🇰</div>
         <div class="info-country">Hong Kong</div>
-        <div class="info-row"><span class="info-key">Annual tuition (USD)</span><span class="info-val">~$5,389</span></div>
+        <div class="info-row"><span class="info-key">Annual tuition (USD)</span><span class="info-val"><span data-live="tuition.HK">~$5,389</span></span></div>
         <div class="info-row"><span class="info-key">4-yr tuition total (USD)</span><span class="info-val">~$21,556</span></div>
-        <div class="info-row"><span class="info-key">Student loan APR</span><span class="info-val">~3.0% (NGNL)</span></div>
+        <div class="info-row"><span class="info-key">Student loan APR</span><span class="info-val">~<span data-live="rate.HK">3.0%</span> (NGNL)</span></div>
         <div class="info-row"><span class="info-key">Rate type</span><span class="info-val">Variable (NGNL basis)</span></div>
         <div class="info-row"><span class="info-key">Repayment</span><span class="info-val">Fixed monthly, max 15 yrs</span></div>
         <div class="info-row"><span class="info-key">Loan write-off</span><span class="info-val">None</span></div>
@@ -620,9 +632,9 @@
       <div class="info-card">
         <div class="info-flag">🇸🇬</div>
         <div class="info-country">Singapore</div>
-        <div class="info-row"><span class="info-key">Annual tuition (USD)</span><span class="info-val">~$8,250</span></div>
+        <div class="info-row"><span class="info-key">Annual tuition (USD)</span><span class="info-val">~<span data-live="tuition.SG">$8,250</span></span></div>
         <div class="info-row"><span class="info-key">4-yr tuition total (USD)</span><span class="info-val">~$33,000</span></div>
-        <div class="info-row"><span class="info-key">Student loan APR</span><span class="info-val">~3.6% (MOE TFL)</span></div>
+        <div class="info-row"><span class="info-key">Student loan APR</span><span class="info-val">~<span data-live="rate.SG">3.6%</span> (MOE TFL)</span></div>
         <div class="info-row"><span class="info-key">Rate type</span><span class="info-val">Variable (bank rate)</span></div>
         <div class="info-row"><span class="info-key">Repayment</span><span class="info-val">Fixed monthly, max 20 yrs</span></div>
         <div class="info-row"><span class="info-key">Loan write-off</span><span class="info-val">None</span></div>
@@ -635,7 +647,7 @@
         <div class="info-country">United Kingdom</div>
         <div class="info-row"><span class="info-key">Annual tuition (USD)</span><span class="info-val">~$11,655</span></div>
         <div class="info-row"><span class="info-key">4-yr tuition total (USD)</span><span class="info-val">~$46,620</span></div>
-        <div class="info-row"><span class="info-key">Student loan APR</span><span class="info-val">Plan 5: ~3.2% / Plan 2: ~6.2%</span></div>
+        <div class="info-row"><span class="info-key">Student loan APR</span><span class="info-val">Plan 5: ~<span data-live="rate.UK_plan5">3.2%</span> / Plan 2: ~<span data-live="rate.UK_plan2">6.2%</span></span></div>
         <div class="info-row"><span class="info-key">Rate type</span><span class="info-val">Variable (RPI-linked)</span></div>
         <div class="info-row"><span class="info-key">Repayment</span><span class="info-val">Income-contingent (9% above threshold)</span></div>
         <div class="info-row"><span class="info-key">Loan write-off</span><span class="info-val">40 yrs (Plan 5) / 30 yrs (Plan 2)</span></div>
@@ -646,9 +658,9 @@
       <div class="info-card">
         <div class="info-flag">🇺🇸</div>
         <div class="info-country">United States</div>
-        <div class="info-row"><span class="info-key">Annual tuition (USD)</span><span class="info-val">$11,610 (in-state) / $39,000 (private)</span></div>
+        <div class="info-row"><span class="info-key">Annual tuition (USD)</span><span class="info-val"><span data-live="tuition.US_instate">$11,610</span> (in-state) / <span data-live="tuition.US_private">$39,000</span> (private)</span></div>
         <div class="info-row"><span class="info-key">4-yr tuition total (USD)</span><span class="info-val">$46,440 / $156,000</span></div>
-        <div class="info-row"><span class="info-key">Student loan APR</span><span class="info-val">6.39% (federal, 2025–26)</span></div>
+        <div class="info-row"><span class="info-key">Student loan APR</span><span class="info-val"><span data-live="rate.US">6.39%</span> (federal, 2025–26)</span></div>
         <div class="info-row"><span class="info-key">Rate type</span><span class="info-val">Fixed</span></div>
         <div class="info-row"><span class="info-key">Repayment</span><span class="info-val">Fixed monthly, 10–25 yrs (IDR avail.)</span></div>
         <div class="info-row"><span class="info-key">Loan write-off</span><span class="info-val">IDR forgiveness after 20–25 yrs</span></div>
@@ -659,9 +671,9 @@
       <div class="info-card">
         <div class="info-flag">🇦🇺</div>
         <div class="info-country">Australia</div>
-        <div class="info-row"><span class="info-key">Annual tuition (USD)</span><span class="info-val">~$6,175</span></div>
+        <div class="info-row"><span class="info-key">Annual tuition (USD)</span><span class="info-val">~<span data-live="tuition.AU">$6,175</span></span></div>
         <div class="info-row"><span class="info-key">4-yr tuition total (USD)</span><span class="info-val">~$24,700</span></div>
-        <div class="info-row"><span class="info-key">Student loan APR</span><span class="info-val">~3.6% (CPI-indexed)</span></div>
+        <div class="info-row"><span class="info-key">Student loan APR</span><span class="info-val">~<span data-live="rate.AU_cpi">3.6%</span> (CPI-indexed)</span></div>
         <div class="info-row"><span class="info-key">Rate type</span><span class="info-val">Variable (CPI-linked, not true interest)</span></div>
         <div class="info-row"><span class="info-key">Repayment</span><span class="info-val">Income-contingent, no fixed term</span></div>
         <div class="info-row"><span class="info-key">Loan write-off</span><span class="info-val">None (but debt preserved)</span></div>
@@ -672,9 +684,9 @@
       <div class="info-card">
         <div class="info-flag">🇨🇦</div>
         <div class="info-country">Canada</div>
-        <div class="info-row"><span class="info-key">Annual tuition (USD)</span><span class="info-val">~$5,646</span></div>
+        <div class="info-row"><span class="info-key">Annual tuition (USD)</span><span class="info-val">~<span data-live="tuition.CA">$5,646</span></span></div>
         <div class="info-row"><span class="info-key">4-yr tuition total (USD)</span><span class="info-val">~$22,584</span></div>
-        <div class="info-row"><span class="info-key">Student loan APR</span><span class="info-val">0% (federal, since Dec 2023)</span></div>
+        <div class="info-row"><span class="info-key">Student loan APR</span><span class="info-val"><span data-live="rate.CA">0%</span> (federal, since Dec 2023)</span></div>
         <div class="info-row"><span class="info-key">Rate type</span><span class="info-val">Fixed</span></div>
         <div class="info-row"><span class="info-key">Repayment</span><span class="info-val">Fixed monthly, max 10 yrs</span></div>
         <div class="info-row"><span class="info-key">Loan write-off</span><span class="info-val">Partial (repayment assistance)</span></div>
@@ -685,9 +697,9 @@
       <div class="info-card">
         <div class="info-flag">🇩🇪</div>
         <div class="info-country">Germany</div>
-        <div class="info-row"><span class="info-key">Annual tuition (USD)</span><span class="info-val">~$157 (semester fees only)</span></div>
+        <div class="info-row"><span class="info-key">Annual tuition (USD)</span><span class="info-val">~<span data-live="tuition.DE">$157</span> (semester fees only)</span></div>
         <div class="info-row"><span class="info-key">4-yr tuition total (USD)</span><span class="info-val">~$628</span></div>
-        <div class="info-row"><span class="info-key">Student loan APR</span><span class="info-val">0% (BAföG)</span></div>
+        <div class="info-row"><span class="info-key">Student loan APR</span><span class="info-val"><span data-live="rate.DE">0%</span> (BAföG)</span></div>
         <div class="info-row"><span class="info-key">Rate type</span><span class="info-val">Fixed (0% — 50% grant, 50% loan)</span></div>
         <div class="info-row"><span class="info-key">Repayment</span><span class="info-val">Fixed monthly, ~5 yr typical</span></div>
         <div class="info-row"><span class="info-key">Loan write-off</span><span class="info-val">Capped at €10,010 total repayable</span></div>
@@ -698,9 +710,9 @@
       <div class="info-card">
         <div class="info-flag">🇫🇷</div>
         <div class="info-country">France</div>
-        <div class="info-row"><span class="info-key">Annual tuition (USD)</span><span class="info-val">~$2,964</span></div>
+        <div class="info-row"><span class="info-key">Annual tuition (USD)</span><span class="info-val">~<span data-live="tuition.FR">$2,964</span></span></div>
         <div class="info-row"><span class="info-key">4-yr tuition total (USD)</span><span class="info-val">~$11,856</span></div>
-        <div class="info-row"><span class="info-key">Student loan APR</span><span class="info-val">~0.5% (state-guaranteed)</span></div>
+        <div class="info-row"><span class="info-key">Student loan APR</span><span class="info-val">~<span data-live="rate.FR">0.5%</span> (state-guaranteed)</span></div>
         <div class="info-row"><span class="info-key">Rate type</span><span class="info-val">Fixed</span></div>
         <div class="info-row"><span class="info-key">Repayment</span><span class="info-val">Fixed monthly, ~10 yrs</span></div>
         <div class="info-row"><span class="info-key">Loan write-off</span><span class="info-val">None</span></div>
@@ -857,5 +869,7 @@
   activate('tuition');
 })();
 </script>
+
+<script src="./data-loader.js"></script>
 </body>
 </html>
