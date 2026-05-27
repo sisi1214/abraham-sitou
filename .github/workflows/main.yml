@@ -1,0 +1,41 @@
+name: Update University Cost Data
+
+# Runs every Monday at 07:00 UTC, or manually from the Actions tab
+on:
+  schedule:
+    - cron: "0 7 * * 1"
+  workflow_dispatch:           # lets you trigger a run manually anytime
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write          # needed to git push data.json back to the repo
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run data fetch script
+        run: python Datablog/fetch_data.py
+
+      - name: Commit and push if data.json changed
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name  "github-actions[bot]"
+          git add Datablog/data.json
+          # Only commit if there is actually a diff (avoids empty commits)
+          if git diff --staged --quiet; then
+            echo "No changes to data.json — skipping commit."
+          else
+            git commit -m "auto: update university cost data $(date -u +%Y-%m-%d)"
+            git push
+          fi
