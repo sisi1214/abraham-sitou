@@ -1,28 +1,28 @@
 {
   "meta": {
-    "last_updated": "2026-05-27T07:00:00Z",
-    "exchange_rate_date": "2026-05-27",
+    "last_updated": "2026-05-27T10:48:42.147954Z",
+    "exchange_rate_date": "2026-05-26",
     "generator": "fetch_data.py via GitHub Actions"
   },
   "exchange_rates_from_usd": {
-    "GBP": 0.7420,
     "AUD": 1.3956,
-    "SGD": 1.2780,
-    "HKD": 7.7800,
-    "CAD": 1.3803,
-    "EUR": 0.8593
+    "CAD": 1.3812,
+    "EUR": 0.85955,
+    "GBP": 0.74244,
+    "HKD": 7.8357,
+    "SGD": 1.2778
   },
   "tuitions_usd": {
     "HK": {
       "local_amount": 42100,
       "local_currency": "HKD",
-      "usd": 5411,
+      "usd": 5373,
       "note": "UGC standard rate — frozen since 1997/98"
     },
     "UK": {
       "local_amount": 9250,
       "local_currency": "GBP",
-      "usd": 12466,
+      "usd": 12459,
       "note": "Domestic cap — Office for Students 2024/25"
     },
     "US_instate": {
@@ -40,19 +40,19 @@
     "SG": {
       "local_amount": 11200,
       "local_currency": "SGD",
-      "usd": 8764,
+      "usd": 8765,
       "note": "MOE subsidised avg across NUS/NTU/SMU AY2024/25"
     },
     "AU": {
       "local_amount": 9540,
       "local_currency": "AUD",
-      "usd": 6835,
+      "usd": 6836,
       "note": "Average domestic — Study Australia 2024"
     },
     "CA": {
       "local_amount": 7734,
       "local_currency": "CAD",
-      "usd": 5603,
+      "usd": 5599,
       "note": "National average — Statistics Canada 2024/25"
     },
     "DE": {
@@ -64,20 +64,20 @@
     "FR": {
       "local_amount": 2770,
       "local_currency": "EUR",
-      "usd": 3224,
+      "usd": 3223,
       "note": "Public university average — MESRI 2024/25"
     }
   },
   "loan_rates": {
-    "DE":       0.0000,
-    "CA":       0.0000,
-    "FR":       0.0050,
-    "HK":       0.0300,
-    "US":       0.0639,
-    "SG":       0.0360,
-    "UK_plan5": 0.0320,
-    "UK_plan2": 0.0600,
-    "AU_cpi":   0.0360
+    "DE": 0.0,
+    "CA": 0.0,
+    "FR": 0.005,
+    "HK": 0.03,
+    "US": 0.0639,
+    "SG": 0.036,
+    "UK_plan5": 0.032,
+    "UK_plan2": 0.062,
+    "AU_cpi": 0.036
   },
   "data_sources": {
     "exchange_rates": "frankfurter.app — ECB reference rates, daily",

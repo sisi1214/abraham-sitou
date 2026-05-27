@@ -18,6 +18,7 @@ import os
 import sys
 import requests
 from datetime import datetime, date
+from typing import Optional, Tuple
 
 # ─── LOCAL CURRENCY TUITION FEES ───────────────────────────────────────────
 # Update the local amounts when governments change fee caps (usually annually).
@@ -56,7 +57,7 @@ STATIC_LOAN_RATES = {
 }
 
 
-def fetch_exchange_rates() -> tuple[dict, str]:
+def fetch_exchange_rates() -> Tuple[dict, str]:
     """
     Fetch ECB reference rates via frankfurter.app (free, no API key).
     Returns (rates_dict, date_string).
@@ -69,7 +70,7 @@ def fetch_exchange_rates() -> tuple[dict, str]:
     return payload["rates"], payload["date"]
 
 
-def fetch_uk_rpi() -> float | None:
+def fetch_uk_rpi() -> Optional[float]:
     """
     Fetch latest UK RPI (All Items) annual rate from the ONS API.
     Used to calculate Plan 2 (RPI + 3%, capped 6%) and Plan 5 (RPI + 0%) rates.
@@ -93,7 +94,7 @@ def fetch_uk_rpi() -> float | None:
     return None
 
 
-def fetch_australia_cpi() -> float | None:
+def fetch_australia_cpi() -> Optional[float]:
     """
     Fetch Australia CPI annual indexation rate from the ABS.
     Returns the rate as a decimal (e.g. 0.036 for 3.6%), or None on failure.
@@ -147,7 +148,7 @@ def calculate_tuitions_usd(rates: dict) -> dict:
     return result
 
 
-def build_loan_rates(uk_rpi: float | None, au_cpi: float | None) -> dict:
+def build_loan_rates(uk_rpi: Optional[float], au_cpi: Optional[float]) -> dict:
     """Merge static rates with freshly-fetched variable rates."""
     rates = dict(STATIC_LOAN_RATES)
 
