@@ -440,6 +440,39 @@ function initScenarioTab() {
     const altYears = parseInt(altYearsInput.value) || 15;
     const earlyPay = parseFloat(earlyPayInput.value) || 0;
     
+    // ─── Validation ───────────────────────────────────────
+    const errors = [];
+    
+    // Base rate validation
+    if (isNaN(baseRate) || baseRate < 0 || baseRate > 1.5) {
+      errors.push("Base Interest Rate must be between 0% and 150%");
+    }
+    
+    // Base years validation
+    if (isNaN(baseYears) || baseYears < 1 || baseYears > 50) {
+      errors.push("Base Years must be between 1 and 50");
+    }
+    
+    // Alt rate validation
+    if (isNaN(altRate) || altRate < 0 || altRate > 1.5) {
+      errors.push("Alternative Interest Rate must be between 0% and 150%");
+    }
+    
+    // Alt years validation
+    if (isNaN(altYears) || altYears < 1 || altYears > 50) {
+      errors.push("Alternative Years must be between 1 and 50");
+    }
+    
+    // Early payment validation
+    if (isNaN(earlyPay) || earlyPay < 0) {
+      errors.push("Extra Monthly Payment cannot be negative");
+    }
+    
+    if (errors.length > 0) {
+      alert("⚠️ Input errors:\n\n" + errors.join("\n"));
+      return;
+    }
+    
     // Scenario 1: Base
     const baseMonthly = calculateMonthlyPayment(tuition, baseRate, baseYears);
     const baseTotal = baseMonthly * baseYears * 12;
