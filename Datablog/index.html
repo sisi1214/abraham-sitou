@@ -291,6 +291,80 @@
     }
     .analysis-note strong { color: var(--text-2); font-weight: 600; }
 
+    /* ── Loan Calculator ── */
+    .loan-section { margin-bottom: 2rem; }
+    .loan-section-title {
+      font-family: 'Lora', Georgia, serif; font-size: 1rem; font-weight: 600;
+      margin-bottom: 1rem; color: var(--text);
+    }
+    .loan-controls {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px; margin-bottom: 1.5rem;
+    }
+    .loan-input-group {
+      display: flex; flex-direction: column;
+    }
+    .loan-input-group label {
+      font-size: 12px; font-weight: 500; color: var(--text-3);
+      text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px;
+    }
+    .loan-input-group input,
+    .loan-input-group select {
+      padding: 8px 12px; border-radius: var(--radius);
+      border: 1px solid var(--border); background: var(--surface);
+      color: var(--text); font-family: inherit; font-size: 14px;
+    }
+    .loan-input-group input:focus,
+    .loan-input-group select:focus {
+      outline: none; border-color: var(--blue); background: var(--surface2);
+    }
+    .loan-btn {
+      padding: 10px 16px; border-radius: var(--radius); border: none;
+      background: var(--blue); color: white; font-weight: 500; cursor: pointer;
+      font-size: 13px; transition: background 0.2s;
+    }
+    .loan-btn:hover { background: var(--blue-light); color: var(--blue); }
+    .loan-tab-buttons {
+      display: flex; gap: 6px; margin-bottom: 1.5rem; flex-wrap: wrap;
+    }
+    .loan-tab-btn {
+      padding: 7px 14px; border-radius: 99px; border: 1px solid var(--border-2);
+      background: transparent; color: var(--text-2); cursor: pointer;
+      font-size: 12px; font-weight: 500; transition: all 0.15s;
+    }
+    .loan-tab-btn:hover { background: var(--surface); }
+    .loan-tab-btn.active {
+      background: var(--text); color: var(--bg); border-color: var(--text);
+    }
+    .loan-tab-panel { display: none; }
+    .loan-tab-panel.active { display: block; }
+    .loan-summary-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 10px; margin-bottom: 1.5rem;
+    }
+    .loan-summary-item {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 12px; display: flex; flex-direction: column; gap: 4px;
+    }
+    .loan-summary-label { font-size: 11px; color: var(--text-3); text-transform: uppercase; font-weight: 500; }
+    .loan-summary-value { font-size: 1.2rem; font-weight: 600; color: var(--text); font-family: 'Lora', Georgia, serif; }
+    .loan-chart-wrap { position: relative; margin-bottom: 1.5rem; }
+    .loan-chart-wrap canvas { display: block; width: 100% !important; }
+    .loan-table-wrap { overflow-x: auto; border-radius: var(--radius); border: 1px solid var(--border); margin-bottom: 1.5rem; }
+    .loan-table {
+      width: 100%; border-collapse: collapse; font-size: 12px;
+      background: var(--surface);
+    }
+    .loan-table thead tr { border-bottom: 1px solid var(--border-2); }
+    .loan-table th {
+      padding: 10px 12px; text-align: left; font-size: 11px; font-weight: 500;
+      letter-spacing: 0.05em; text-transform: uppercase; color: var(--text-3);
+      background: var(--surface2);
+    }
+    .loan-table td { padding: 10px 12px; vertical-align: middle; border-bottom: 1px solid var(--border); }
+    .loan-table tr:last-child td { border-bottom: none; }
+    .loan-table tr:hover td { background: var(--surface2); }
+
     /* ── Live data ── */
     .live-data {
       transition: color 0.3s;
@@ -331,6 +405,7 @@
     <button class="tab-btn" data-tab="loancompare">Loan comparison</button>
     <button class="tab-btn" data-tab="profiles">Country profiles</button>
     <button class="tab-btn" data-tab="analysis">Beyond the numbers</button>
+    <button class="tab-btn" data-tab="calculator">💰 Loan Calculator</button>
   </nav>
 
   <!-- ── Tab 1: Tuition ── -->
@@ -870,6 +945,216 @@
 })();
 </script>
 
+  <!-- ── Tab 6: Loan Calculator ── -->
+  <section id="tab-calculator" class="tab-panel">
+    <h2 style="font-family: 'Lora', serif; font-size: 1.5rem; margin-bottom: 1rem; color: var(--text);">Interactive Loan Calculator</h2>
+    <p style="color: var(--text-2); margin-bottom: 1.5rem; line-height: 1.6;">Model your repayment scenarios with live data. Compare payment schedules across countries, analyze different strategies, and see exactly how interest compounds over time.</p>
+
+    <div class="loan-tab-buttons">
+      <button class="loan-tab-btn active" data-loan-tab="schedule">Payment Schedule</button>
+      <button class="loan-tab-btn" data-loan-tab="comparison">Compare Countries</button>
+      <button class="loan-tab-btn" data-loan-tab="scenario">What-If Analysis</button>
+    </div>
+
+    <!-- Schedule Tab -->
+    <div id="loan-tab-schedule" class="loan-tab-panel active">
+      <div class="loan-section">
+        <h3 class="loan-section-title">Payment Schedule & Amortization</h3>
+        <div class="loan-controls">
+          <div class="loan-input-group">
+            <label>Country</label>
+            <select id="scheduleCountry">
+              <option value="HK">🇭🇰 Hong Kong</option>
+              <option value="UK">🇬🇧 United Kingdom</option>
+              <option value="US_instate" selected>🇺🇸 US In-State</option>
+              <option value="US_private">🇺🇸 US Private</option>
+              <option value="SG">🇸🇬 Singapore</option>
+              <option value="AU">🇦🇺 Australia</option>
+              <option value="CA">🇨🇦 Canada</option>
+              <option value="DE">🇩🇪 Germany</option>
+              <option value="FR">🇫🇷 France</option>
+            </select>
+          </div>
+          <div class="loan-input-group">
+            <label>Interest Rate (% p.a.)</label>
+            <input type="number" id="scheduleRate" value="5.0" step="0.1" min="0" max="15">
+          </div>
+          <div class="loan-input-group">
+            <label>Repayment Period (years)</label>
+            <input type="number" id="scheduleYears" value="10" step="1" min="1" max="30">
+          </div>
+          <div class="loan-input-group" style="justify-content: flex-end;">
+            <button class="loan-btn" id="scheduleGenBtn">📊 Generate Schedule</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="scheduleSummary"></div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px; margin-bottom: 1.5rem;">
+        <div class="loan-chart-wrap" style="height: 250px;">
+          <canvas id="scheduleBalanceChart"></canvas>
+        </div>
+        <div class="loan-chart-wrap" style="height: 250px;">
+          <canvas id="scheduleCompChart"></canvas>
+        </div>
+      </div>
+
+      <h4 style="font-weight: 600; margin-bottom: 0.75rem; font-size: 0.95rem;">Amortization Table (Sample)</h4>
+      <div class="loan-table-wrap">
+        <table class="loan-table">
+          <thead>
+            <tr>
+              <th>Month</th>
+              <th>Payment</th>
+              <th>Principal</th>
+              <th>Interest</th>
+              <th>Balance</th>
+            </tr>
+          </thead>
+          <tbody id="scheduleTable"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Comparison Tab -->
+    <div id="loan-tab-comparison" class="loan-tab-panel">
+      <div class="loan-section">
+        <h3 class="loan-section-title">Compare Loans Across Countries</h3>
+        <div class="loan-controls">
+          <div class="loan-input-group" style="grid-column: 1 / -1;">
+            <label>Select up to 3 countries to compare</label>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px;">
+              <select class="comparison-country"><option value="">— Choose country 1 —</option>
+                <option value="HK">🇭🇰 Hong Kong</option><option value="UK">🇬🇧 UK</option>
+                <option value="US_instate" selected>🇺🇸 US In-State</option><option value="US_private">🇺🇸 US Private</option>
+                <option value="SG">🇸🇬 Singapore</option><option value="AU">🇦🇺 Australia</option>
+                <option value="CA">🇨🇦 Canada</option><option value="DE">🇩🇪 Germany</option>
+                <option value="FR">🇫🇷 France</option>
+              </select>
+              <select class="comparison-country"><option value="">— Choose country 2 —</option>
+                <option value="HK">🇭🇰 Hong Kong</option><option value="UK">🇬🇧 UK</option>
+                <option value="US_instate">🇺🇸 US In-State</option><option value="US_private">🇺🇸 US Private</option>
+                <option value="SG">🇸🇬 Singapore</option><option value="AU" selected>🇦🇺 Australia</option>
+                <option value="CA">🇨🇦 Canada</option><option value="DE">🇩🇪 Germany</option>
+                <option value="FR">🇫🇷 France</option>
+              </select>
+              <select class="comparison-country"><option value="">— Choose country 3 (optional) —</option>
+                <option value="HK">🇭🇰 Hong Kong</option><option value="UK" selected>🇬🇧 UK</option>
+                <option value="US_instate">🇺🇸 US In-State</option><option value="US_private">🇺🇸 US Private</option>
+                <option value="SG">🇸🇬 Singapore</option><option value="AU">🇦🇺 Australia</option>
+                <option value="CA">🇨🇦 Canada</option><option value="DE">🇩🇪 Germany</option>
+                <option value="FR">🇫🇷 France</option>
+              </select>
+            </div>
+          </div>
+          <div class="loan-input-group">
+            <label>Repayment Period (years)</label>
+            <input type="number" id="comparisonYears" value="10" step="1" min="1" max="30">
+          </div>
+          <div class="loan-input-group" style="justify-content: flex-end;">
+            <button class="loan-btn" id="comparisonBtn">📊 Compare</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="comparisonSummary" style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 1.5rem; font-size: 13px; color: var(--text-2);"></div>
+
+      <div class="loan-chart-wrap" style="height: 300px; margin-bottom: 1.5rem;">
+        <canvas id="comparisonChart"></canvas>
+      </div>
+
+      <h4 style="font-weight: 600; margin-bottom: 0.75rem; font-size: 0.95rem;">Comparison Results</h4>
+      <div class="loan-table-wrap">
+        <table class="loan-table">
+          <thead>
+            <tr>
+              <th>Country</th>
+              <th>Tuition (USD)</th>
+              <th>Interest Rate</th>
+              <th>Monthly Payment</th>
+              <th>Total Interest</th>
+              <th>Total Cost</th>
+            </tr>
+          </thead>
+          <tbody id="comparisonTable"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Scenario Tab -->
+    <div id="loan-tab-scenario" class="loan-tab-panel">
+      <div class="loan-section">
+        <h3 class="loan-section-title">What-If Scenario Analysis</h3>
+        <p style="color: var(--text-2); margin-bottom: 1rem; font-size: 13px;">Model three strategies: stick with base terms, try alternative rates/terms, or pay extra monthly.</p>
+
+        <div class="loan-controls">
+          <div class="loan-input-group" style="grid-column: 1 / -1;">
+            <label>Country</label>
+            <select id="scenarioCountry">
+              <option value="HK">🇭🇰 Hong Kong</option><option value="UK">🇬🇧 UK</option>
+              <option value="US_instate" selected>🇺🇸 US In-State</option><option value="US_private">🇺🇸 US Private</option>
+              <option value="SG">🇸🇬 Singapore</option><option value="AU">🇦🇺 Australia</option>
+              <option value="CA">🇨🇦 Canada</option><option value="DE">🇩🇪 Germany</option>
+              <option value="FR">🇫🇷 France</option>
+            </select>
+          </div>
+          <div class="loan-input-group">
+            <label>Base: Interest Rate (%)</label>
+            <input type="number" id="scenarioBaseRate" value="5.0" step="0.1" min="0" max="15">
+          </div>
+          <div class="loan-input-group">
+            <label>Base: Years</label>
+            <input type="number" id="scenarioBaseYears" value="10" step="1" min="1" max="30">
+          </div>
+          <div class="loan-input-group">
+            <label>Alt: Interest Rate (%)</label>
+            <input type="number" id="scenarioAltRate" value="3.0" step="0.1" min="0" max="15">
+          </div>
+          <div class="loan-input-group">
+            <label>Alt: Years</label>
+            <input type="number" id="scenarioAltYears" value="15" step="1" min="1" max="30">
+          </div>
+          <div class="loan-input-group">
+            <label>Extra Monthly ($)</label>
+            <input type="number" id="scenarioEarlyPay" value="0" step="50" min="0">
+          </div>
+          <div class="loan-input-group" style="justify-content: flex-end;">
+            <button class="loan-btn" id="scenarioBtn">🔍 Analyze</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="scenarioSummary" style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 1.5rem; font-size: 13px; color: var(--text-2);"></div>
+
+      <div class="loan-chart-wrap" style="height: 300px; margin-bottom: 1.5rem;">
+        <canvas id="scenarioChart"></canvas>
+      </div>
+
+      <h4 style="font-weight: 600; margin-bottom: 0.75rem; font-size: 0.95rem;">Scenario Comparison</h4>
+      <div class="loan-table-wrap">
+        <table class="loan-table">
+          <thead>
+            <tr>
+              <th>Scenario</th>
+              <th>Monthly Payment</th>
+              <th>Rate (%)</th>
+              <th>Term</th>
+              <th>Total Interest</th>
+              <th>Total Cost</th>
+            </tr>
+          </thead>
+          <tbody id="scenarioTable"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
 <script src="./data-loader.js"></script>
+<script src="./loan-calculator.js"></script>
+<script>
+  // Initialize loan calculator when page loads
+  initLoanCalculator();
+</script>
 </body>
 </html>
