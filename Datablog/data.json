@@ -1,16 +1,16 @@
 {
   "meta": {
-    "last_updated": "2026-09-21T13:30:28.987877Z",
-    "exchange_rate_date": "2026-09-18",
+    "last_updated": "2026-09-28T14:47:04.708265Z",
+    "exchange_rate_date": "2026-09-28",
     "generator": "fetch_data.py via GitHub Actions"
   },
   "exchange_rates_from_usd": {
-    "AUD": 1.4045,
-    "CAD": 1.401,
-    "EUR": 0.8726,
-    "GBP": 0.74939,
-    "HKD": 7.8449,
-    "SGD": 1.2784
+    "AUD": 1.4237,
+    "CAD": 1.4166,
+    "EUR": 0.87889,
+    "GBP": 0.75396,
+    "HKD": 7.8448,
+    "SGD": 1.2777
   },
   "tuitions_usd": {
     "HK": {
@@ -22,7 +22,7 @@
     "UK": {
       "local_amount": 9250,
       "local_currency": "GBP",
-      "usd": 12343,
+      "usd": 12269,
       "note": "Domestic cap — Office for Students 2024/25"
     },
     "US_instate": {
@@ -40,31 +40,31 @@
     "SG": {
       "local_amount": 11200,
       "local_currency": "SGD",
-      "usd": 8761,
+      "usd": 8766,
       "note": "MOE subsidised avg across NUS/NTU/SMU AY2024/25"
     },
     "AU": {
       "local_amount": 9540,
       "local_currency": "AUD",
-      "usd": 6792,
+      "usd": 6701,
       "note": "Average domestic — Study Australia 2024"
     },
     "CA": {
       "local_amount": 7734,
       "local_currency": "CAD",
-      "usd": 5520,
+      "usd": 5460,
       "note": "National average — Statistics Canada 2024/25"
     },
     "DE": {
       "local_amount": 144,
       "local_currency": "EUR",
-      "usd": 165,
+      "usd": 164,
       "note": "Semester administration fees only; no tuition"
     },
     "FR": {
       "local_amount": 2770,
       "local_currency": "EUR",
-      "usd": 3174,
+      "usd": 3152,
       "note": "Public university average — MESRI 2024/25"
     }
   },
